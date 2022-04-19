@@ -1,0 +1,143 @@
+/*// BASE STYLES //*/
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass,
+.sky,
+.road {
+    position: relative;
+}
+
+.sky {
+    height: 40%;
+    background: skyblue;
+}
+
+.grass {
+    height: 30%;
+    background: seagreen;
+}
+
+.road {
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+}
+
+.lines {
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+.second{
+    width: 10%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    animation: drive 5s both infinite linear ,jump 0.3s 1.2s ease;;
+   
+    /*4... the second one delays a little bit */
+    
+
+    /*5... animation direction  */
+    /* animation-direction: reverse; animation direction alternate makes temelalash  */
+     
+    /*6... animation timing function  when it arrive it will slow default --easy*/
+    /* animation-timing-function: linear; */
+   
+
+}
+
+
+
+/*// ELEMENTS TO ANIMATE //*/
+.mario{
+    position: absolute;
+    top: -60px;
+    width: 6%;
+    left: 0;
+    animation: drive 3s both infinite linear, 
+    jump 0.3s 1.2s ease;
+    
+
+    /*2...  what will be done once an animation is done handled by animation fuil mode both imply it stays at the end  */
+    
+    
+
+    /*3...repeating an animation and never stop*/
+    
+
+    /*6... animation timing function  when it arrive it will slow default --ease linear will make constant*/
+    /*6b...cubic bezier lets you to draw a patterinical speed go to website and see how it work*/
+    /* animation-timing-function: cubic-bezier(0, .77, 1, .28); */
+
+    
+    
+    
+
+   
+
+
+}
+.cloud{
+    position: absolute;
+
+}
+.cloud:nth-child(1){
+    width: 200px;
+    top: 10px;
+    opacity: 0.5;
+    animation:wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+    width: 300px;
+    top: 0;
+    animation:wind 50s linear infinite reverse;
+}
+
+
+
+/*// KEYFRAMES //*/
+/*1.. give key frame name : drive
+   define from and after on moving object since transform
+   apply keyframe name on the above
+
+*/
+@keyframes drive{
+    from{transform: translateX(-200px);}
+    to{transform: translateX(900px);}
+}
+
+/*7...modifying the animation and build up cloud effect by building another keyframe*/
+
+@keyframes wind{
+    from {
+        left: -300px;
+    }
+    
+    to {
+        left: 100%;
+    }
+    
+}
+
+/* 10 lets see jump animation*/
+
+@keyframes jump{
+    0%{top: -40px;}
+    50%{top: -100px;}
+    100%{top: -40px;}
+}
